@@ -67,4 +67,38 @@ function log(message: string | number): void {
   console.log(message);
 }
 
-log('hello');
+// interfaces
+interface UserInterface {
+  readonly id: number;
+  name: string;
+  age?: number; // now age is optional
+}
+
+const user1: UserInterface = {
+  id: 1,
+  name: 'John',
+};
+
+interface MathFunc {
+  (x: number, y: number): number;
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y;
+const sub: MathFunc = (x: number, y: number): number => x - y;
+
+// classes
+class Person {
+  id: number;
+  name: string;
+
+  constructor(id: number, name: string) {
+    this.id = id;
+    this.name = name;
+  }
+}
+
+const brad = new Person(1, 'Brad');
+const mike = new Person(2, 'Mike');
+
+console.log(brad, mike);
+// --> Person { id: 1, name: 'Brad' } Person { id: 2, name: 'Mike' }

@@ -52,4 +52,20 @@ function log(message) {
     // message can be string or number, return value nothing (void)
     console.log(message);
 }
-log('hello');
+const user1 = {
+    id: 1,
+    name: 'John',
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+// classes
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+const brad = new Person(1, 'Brad');
+const mike = new Person(2, 'Mike');
+console.log(brad, mike);
+// --> Person { id: 1, name: 'Brad' } Person { id: 2, name: 'Mike' }
