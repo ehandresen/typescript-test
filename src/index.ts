@@ -88,12 +88,16 @@ const sub: MathFunc = (x: number, y: number): number => x - y;
 
 // classes
 class Person {
-  id: number;
+  private id: number;
   name: string;
 
   constructor(id: number, name: string) {
     this.id = id;
     this.name = name;
+  }
+
+  register() {
+    return `${this.name} is now registered`;
   }
 }
 
@@ -102,3 +106,13 @@ const mike = new Person(2, 'Mike');
 
 console.log(brad, mike);
 // --> Person { id: 1, name: 'Brad' } Person { id: 2, name: 'Mike' }
+
+// generics
+function getArray<T>(items: T[]): T[] {
+  return new Array().concat(items);
+}
+
+let numArray = getArray<number>([1, 2, 3, 4]);
+let strArray = getArray<string>(['brad', 'john', 'jill']);
+
+numArray.push('hello');

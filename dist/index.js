@@ -64,8 +64,18 @@ class Person {
         this.id = id;
         this.name = name;
     }
+    register() {
+        return `${this.name} is now registered`;
+    }
 }
 const brad = new Person(1, 'Brad');
 const mike = new Person(2, 'Mike');
 console.log(brad, mike);
 // --> Person { id: 1, name: 'Brad' } Person { id: 2, name: 'Mike' }
+// generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['brad', 'john', 'jill']);
+numArray.push('hello');
